@@ -1,8 +1,12 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Swal from "sweetalert2";
 const TodoLayout = () => {
-  const [todos, setTodos] = useState(["Belajar React"]);
+  const [todos, setTodos] = useState([]);
   const inputTodo = useRef(null);
+
+  useEffect(() => {
+    setTodos(["Belajar React"]);
+  }, []);
 
   const addTodo = () => {
     const newTodo = inputTodo.current.value;
